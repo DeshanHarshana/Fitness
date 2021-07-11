@@ -1,0 +1,61 @@
+ion-content{
+  --background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)),
+  url("/assets/age.jpg") no-repeat center center / cover;
+}
+.login-section{
+  text-align: right;
+  height: 78vh;
+  width: 100%;
+  max-width: 500px;
+  background-image: url("/assets/age2.jpg");
+  right:0;
+  left:0;
+  box-shadow: inset;
+  bottom: 70px;
+  position: fixed;
+  margin: auto;
+  border-top-left-radius: 46px;
+  border-top-right-radius: 46px;
+  border-bottom-left-radius: 46px;
+  border-bottom-right-radius: 46px;
+
+
+
+  .heading{
+
+    h1{
+      font-size:1.6rem;
+      font-weight: bolder;
+      text-align: center;
+    }
+    p{
+
+      font-size:1rem;
+      color:#7b7b7b;
+    }
+  }
+  .headline{
+    text-align: center;
+font-size: 70px;
+border: none;
+
+background: transparent;
+max-width: 150px;
+  }
+  .action-buttons{
+    text-align:center;
+    .login-button{
+      --background:#f9b801;
+      width:100%;
+      font-weight: bold;
+    }
+    p{
+      margin-top: 15px;
+      font-size:1rem;
+      color:#7b7b7b;
+    }
+
+  }
+
+
+}

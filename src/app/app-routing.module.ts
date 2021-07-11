@@ -4,7 +4,27 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    loadChildren: () => import('./pages/age/age.module').then( m => m.AgePageModule)
+  },
+  {
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'age',
+    loadChildren: () => import('./pages/age/age.module').then( m => m.AgePageModule)
+  },
+  {
+    path: 'bodydetails',
+    loadChildren: () => import('./pages/bodydetails/bodydetails.module').then( m => m.BodydetailsPageModule)
+  },
+  {
+    path: 'complete',
+    loadChildren: () => import('./pages/complete/complete.module').then( m => m.CompletePageModule)
   }
 ];
 @NgModule({
