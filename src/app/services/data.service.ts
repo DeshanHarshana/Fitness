@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { BodyDetails } from '../model/BodyDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +38,20 @@ export class DataService {
     }
 
     )
+  }
+  setProfileBodyDetails(height, weight){
+   return this.afStore
+    .collection('user')
+    .doc(localStorage.getItem('uid'))
+    .collection('details')
+    .doc(localStorage.getItem('currentUserDoc')).update({
+      height:height,
+      weight:weight
+    })
+
+  }
+  getProfileBodyDetails() {
+    return this.afStore.collection('user').doc(localStorage.getItem('uid'))
+    .collection('details').doc<BodyDetails>(localStorage.getItem('currentUserDoc')).valueChanges();
   }
 }

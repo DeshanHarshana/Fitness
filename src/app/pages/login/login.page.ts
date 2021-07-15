@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-
+import {map, take} from 'rxjs/operators';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,7 +14,9 @@ export class LoginPage implements OnInit {
   password:String
   constructor(
     public authService:AuthenticationService,
-    public router:Router
+    public router:Router,
+    private afStore:AngularFirestore,
+
   ) { }
 
   ngOnInit() {
@@ -29,7 +32,23 @@ export class LoginPage implements OnInit {
         this.router.navigateByUrl('/tabs');
         localStorage.setItem("login","true");
         localStorage.setItem('uid', res.user.uid)
-      }).catch((error) => {
+      }).then(()=>{
+        console.log("dsfgsd");
+        const x=this.afStore
+        .collection<any>('user')
+        .doc(localStorage.getItem('uid'))
+        .collection<any>('details')
+        .get().subscribe(doc=>{
+          doc.docs.forEach(x=>
+            localStorage.setItem('currentUserDoc', x.id)
+          )
+        })
+       // console.log(x)
+      }
+
+      )
+
+      .catch((error) => {
         window.alert(error.message)
       })
   }

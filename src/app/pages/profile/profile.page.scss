@@ -97,6 +97,13 @@ text-align: center;
   border-radius: 50%;
   background: radial-gradient(rgb(97, 226, 71), navy);
 }
+.save-button{
+  --border-color:#b4b4b4;
+  -color:#000000;
+  font-weight: bold;
+  margin-top: 30px;
+  width: 100%;
+}
 .slider2{
   appearance: none;
   -webkit-appearance: none;
@@ -160,4 +167,25 @@ text-align: center;
   font-size: 60px;
   font-weight: bolder;
   color:#ff2a00;
+}
+.x{
+  animation-duration: 2s;
+  animation-delay: 0.2s;
+
+}
+.y{
+  animation-duration: 2s;
+  animation-delay: 0.3s;
+
+}
+.z{
+
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+
+}
+.a{
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+
 }

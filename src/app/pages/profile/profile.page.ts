@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { BodyDetails } from 'src/app/model/BodyDetails';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,15 +12,25 @@ import { Component, OnInit } from '@angular/core';
 export class ProfilePage implements OnInit {
   slider:Number=168;
   weight:Number=65;
+  age:Number=0;
   BMI:Number=0;
   public bmicolor="";
   public state:String="";
-  constructor() { }
+
+  constructor(
+   private toastController:ToastController,
+   private dataService:DataService
+  ) { }
 
   ngOnInit() {
     const value=(Number(this.weight)/(Number(this.slider)*Number(this.slider)))*10000;
     this.BMI=Math.round(value * 10 ) / 10;
     this.bmicolor=this.selectBmiColor(this.BMI);
+    this.dataService.getProfileBodyDetails().subscribe(data=>{
+      this.slider=Number(data.height),
+      this.weight=Number(data.weight),
+      this.age=Number(data.age)
+    })
 
   }
   change(){
@@ -59,4 +73,17 @@ this.bmicolor=this.selectBmiColor(this.BMI);
       return "less48";
     }
   }
+  async openToast(message){
+    const toast=await this.toastController.create({
+      message: message,
+      duration: 800,
+      position: 'bottom'
+    });
+    toast.present();
+  }
+  save(){
+this.dataService.setProfileBodyDetails(this.slider, this.weight);
+this.openToast("Save Successfull");
+
+}
 }
