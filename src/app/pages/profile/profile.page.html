@@ -1,0 +1,53 @@
+
+
+<ion-content>
+<h1>Mine</h1>
+<ion-avatar>
+  <img src="./assets/avatar.jpg">
+</ion-avatar>
+<h2>Deshan Harshana</h2>
+<h4>Age : 23</h4>
+
+<ion-card>
+  <ion-card-header>
+    <h4>Body Details</h4>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h6>
+H : {{slider}}cm
+          </h6>
+        </ion-col>
+        <ion-col><h6>
+W : {{weight}}Kg</h6>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-header>
+  <ion-card-content>
+<ion-grid>
+<ion-row>
+   <ion-col>
+     <ion-row class="weight">
+      <input type="range"  min="35" max="95" class="slider2" (ngModelChange)="change()" [(ngModel)]="weight">
+     </ion-row>
+     <ion-row >
+<ion-col class="BMI">
+  <h5>BMI</h5>
+  <h3 [class]="bmicolor">{{BMI}}</h3>
+  <h4>{{state}}</h4>
+
+</ion-col>
+
+
+     </ion-row>
+   </ion-col>
+   <ion-col class="height" >
+<input type="range"  min="140" max="180" class="slider" (ngModelChange)="change()" [(ngModel)]="slider">
+
+   </ion-col>
+ </ion-row>
+</ion-grid>
+  </ion-card-content>
+</ion-card>
+</ion-content>

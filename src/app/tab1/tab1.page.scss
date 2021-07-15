@@ -1,0 +1,91 @@
+ion-content{
+  --background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,1))
+
+
+
+}
+
+
+
+
+
+
+
+ion-content {
+h1{
+  float:left;
+}
+
+  .head{
+    color:white;
+    text-align: center;
+    font-family: fantasy;
+   font-weight: bolder;
+    font-size: 50px;
+  }
+  ion-card {
+
+    width: auto;
+
+    height: 250px;
+    h1{
+      color: white;
+      float: right;
+      font-weight: bolder;
+      padding-top: 180px;
+    }
+
+    border-radius: 25px;
+
+  }
+
+
+
+
+
+}
+.p{
+  animation-duration: 2s;
+  animation-delay: 0.1s;
+}
+.x{
+  animation-duration: 2s;
+  animation-delay: 0.2s;
+
+}
+.y{
+  animation-duration: 2s;
+  animation-delay: 0.3s;
+
+}
+.z{
+
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+
+}
+.a{
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+
+}
+.loss{
+  --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
+url("/assets/loss.jpg") no-repeat center center / cover;
+  }
+  .gain{
+    --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
+    url("/assets/gain.jpg") no-repeat center center / cover;
+  }
+  .diat{
+    --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
+    url("/assets/diat.jpg") no-repeat center center / cover;
+  }
+  .work{
+    --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
+    url("/assets/work.jpg") no-repeat center center / cover;
+  }
+  .equ{
+    --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
+    url("/assets/equ.jpg") no-repeat center center / cover;
+  }

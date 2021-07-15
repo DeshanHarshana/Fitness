@@ -28,10 +28,15 @@
     "@capacitor/haptics": "1.0.2",
     "@capacitor/keyboard": "1.0.2",
     "@capacitor/status-bar": "1.0.2",
+    "@ionic-native/core": "^5.34.0",
+    "@ionic-native/google-plus": "^5.34.0",
+    "@ionic-native/media": "^5.34.0",
     "@ionic/angular": "^5.5.2",
     "angular-animations": "^0.11.0",
     "angularfire2": "^5.4.2",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.0.2",
+    "cordova-plugin-googleplus": "^8.5.2",
     "firebase": "^8.7.1",
     "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
@@ -74,5 +79,5 @@
   "description": "An Ionic project",
   "config": {
     "ionic_sass": "./sass.config.js"
-}
+  }
 }

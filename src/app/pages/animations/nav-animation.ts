@@ -1,7 +1,7 @@
 import { AnimationController, Animation } from "@ionic/angular";
 
 export const enterAnimation=(baseEl:HTMLElement, opts?:any):Animation=>{
-  const DURATION=500
+  const DURATION=1000
   const animationCtrl=new AnimationController();
   if(opts.direction==='forword'){
     return animationCtrl.create().addElement(opts.enteringEl)

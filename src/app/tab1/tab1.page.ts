@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-tab1',
@@ -8,10 +9,14 @@ import { ToastController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  constructor(public toastController:ToastController) {}
-  showToaster(){
-this.openToast("ajdalsdaslkda");
-  }
+  constructor(public toastController:ToastController,
+    public authService:AuthenticationService,
+
+    ) {}
+
+
+
+
 
   async openToast(message){
     const toast=await this.toastController.create({
@@ -21,4 +26,5 @@ this.openToast("ajdalsdaslkda");
     });
     toast.present();
   }
+
 }

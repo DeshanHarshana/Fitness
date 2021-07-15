@@ -28,7 +28,7 @@ export class RegisterPage implements OnInit {
   signUp(){
     this.authService.RegisterUser(this.email, this.password)
     .then((res) => {
-      this.router.navigate(['/tabs']);
+
       localStorage.setItem("login","true");
       localStorage.setItem("uid",res.user.uid);
       this.afs.collection('user').doc(res.user.uid).collection('details').add({
@@ -37,6 +37,11 @@ export class RegisterPage implements OnInit {
         profile_link:"https://wikicraze.com/wp-content/uploads/2019/08/girl-32-3.jpg",
         weight:"",
         height:"",
+      }).then(res=>{
+        localStorage.setItem('currentUserDoc', res.id);
+
+      }).then(x=>{
+        this.router.navigate(['/age']);
       })
     }).catch((error) => {
       this.openToast(error.message);

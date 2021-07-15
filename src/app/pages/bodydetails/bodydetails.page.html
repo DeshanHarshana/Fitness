@@ -2,20 +2,20 @@
 <ion-content>
   <div class="login-section ion-padding" >
     <div class = "heading ion-padding" style="text-align: center;">
-      <h1>Body Details</h1>
-      <h1>(Cm & Kg)</h1>
+      <h1 class="headline">Body Details</h1>
+      <h1 class="headline">(Cm & Kg)</h1>
 
-      <input type="text"  class="headline" placeholder="Height">
+      <input type="text" [(ngModel)]='height'  class="headline headline animate__animated animate__lightSpeedInRight" placeholder="Cm">
       <hr>
 
-      <input type="text"  class="headline" placeholder="Weight">
+      <input type="text" [(ngModel)]='weight'  class="headline headline animate__animated animate__lightSpeedInRight" placeholder="Kg">
 
       <div class="login-form ion-padding">
 
 
       </div>
       <div class="action-buttons ion-padding">
-        <ion-button size="large" routerLink="/complete"  class="login-button">Next</ion-button>
+        <ion-button size="large" (click)="details()"  class="login-button">Next</ion-button>
 
          </div>
     </div>

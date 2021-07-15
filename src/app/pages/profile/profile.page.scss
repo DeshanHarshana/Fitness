@@ -1,0 +1,163 @@
+ion-content{
+  --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+  url("/assets/gym-girl.jpg") no-repeat center center / cover;
+
+  h1{
+    text-align: center;
+    font-family:DejaVu Sans Mono, monospace ;
+    font-weight: bolder;
+    color: white;
+  }
+  h2{
+    text-align: center;
+    font-family:DejaVu Sans Mono, monospace ;
+    font-weight: bolder;
+    color: white;
+  }
+
+
+  h4{
+    text-align: center;
+    font-family:DejaVu Sans Mono, monospace ;
+    font-weight: bolder;
+    color: white;
+  }
+ h5 {
+    text-align: center;
+    font-family:DejaVu Sans Mono, monospace ;
+    font-weight: bolder;
+    color: white;
+  }
+  ion-card{
+    background-color: #001029;
+    text-align: center;
+
+  }
+
+  ion-avatar {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+}
+.height{
+background-image: url('/assets/human.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+width: fit-content;
+
+
+height: 350px;
+
+}
+.weight{
+  background-image: url('/assets/weight.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+text-align: center;
+}
+.BMI{
+
+
+height: 175px;
+padding-top: 50%;
+
+text-align: center;
+
+
+
+
+}
+
+.slider{
+  appearance: none;
+  -webkit-appearance: none;
+  margin: auto;
+  position:absolute;
+  text-align: center;
+  top: 0; bottom: 0; right: 0; left: 0;
+  transform: rotate(-90deg);
+  width:300px;
+  height: 10px;
+  background-color: white;
+
+  border-radius: 25px;
+  outline: none;
+
+}
+.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  position:relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(rgb(97, 226, 71), navy);
+}
+.slider2{
+  appearance: none;
+  -webkit-appearance: none;
+
+
+  width:120px;
+  height: 10px;
+  background-color: white;
+
+  border-radius: 25px;
+  outline: none;
+
+}
+.slider2::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(rgb(97, 226, 71), navy);
+}
+
+
+.less16{
+  font-size: 60px;
+  font-weight: bolder;
+  color:#0077ff;
+}
+.less17{
+  font-size: 60px;
+  font-weight: bolder;
+  color:#00aaff;
+}
+.less18-5{
+  font-size: 60px;
+  font-weight: bolder;
+  color:#00ffe1;
+}
+.less25{
+  font-size: 60px;
+  font-weight: bolder;
+  color:#0dff00;
+}
+.less30{
+  font-size: 60px;
+  font-weight: bolder;
+  color:#c3ff00;
+}
+.less35{
+  font-size: 60px;
+  font-weight: bolder;
+  color:#fffb00;
+}
+.less40{
+  font-size: 60px;
+  font-weight: bolder;
+  color:#ff9100;
+}
+.less48{
+  font-size: 60px;
+  font-weight: bolder;
+  color:#ff2a00;
+}

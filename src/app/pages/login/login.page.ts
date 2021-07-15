@@ -28,6 +28,7 @@ export class LoginPage implements OnInit {
       .then((res) => {
         this.router.navigateByUrl('/tabs');
         localStorage.setItem("login","true");
+        localStorage.setItem('uid', res.user.uid)
       }).catch((error) => {
         window.alert(error.message)
       })

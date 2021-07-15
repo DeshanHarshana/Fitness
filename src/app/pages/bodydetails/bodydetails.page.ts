@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-bodydetails',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bodydetails.page.scss'],
 })
 export class BodydetailsPage implements OnInit {
-
-  constructor() { }
+height:String;
+weight:String;
+  constructor(
+    private dataService:DataService
+  ) { }
 
   ngOnInit() {
   }
-
+details(){
+this.dataService.setBodyDetails(this.height, this.weight);
+}
 }

@@ -4,14 +4,14 @@
     <div class = "heading ion-padding" style="text-align: center;">
       <h1>Enter Age</h1>
 
-      <input type="text"  class="headline" placeholder="Age">
+      <input type="text" [(ngModel)]="age" autofocus="true" #nameRef  class="headline animate__animated animate__lightSpeedInRight" placeholder="Age">
 
       <div class="login-form ion-padding">
 
 
       </div>
       <div class="action-buttons ion-padding">
-        <ion-button size="large" routerLink="/bodydetails"  class="login-button">Next</ion-button>
+        <ion-button size="large"  (click)="setAge()"  class="login-button animate__bounceIn">Next</ion-button>
 
          </div>
     </div>
