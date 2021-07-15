@@ -50,7 +50,7 @@ export class DataService {
     })
 
   }
-  getProfileBodyDetails() {
+ getProfileBodyDetails() {
     return this.afStore.collection('user').doc(localStorage.getItem('uid'))
     .collection('details').doc<BodyDetails>(localStorage.getItem('currentUserDoc')).valueChanges();
   }

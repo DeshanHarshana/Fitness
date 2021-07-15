@@ -14,6 +14,7 @@ export class ProfilePage implements OnInit {
   weight:Number=65;
   age:Number=0;
   BMI:Number=0;
+  Name=""
   public bmicolor="";
   public state:String="";
 
@@ -22,16 +23,22 @@ export class ProfilePage implements OnInit {
    private dataService:DataService
   ) { }
 
-  ngOnInit() {
+   ngOnInit () {
+
+     this.dataService.getProfileBodyDetails().subscribe(data=>{
+      this.slider=Number(data.height),
+      this.weight=Number(data.weight),
+      this.age=Number(data.age),
+      this.Name=data.displayName
+    }
+
+    )
+
+  }
+  ngDoCheck(){
     const value=(Number(this.weight)/(Number(this.slider)*Number(this.slider)))*10000;
     this.BMI=Math.round(value * 10 ) / 10;
     this.bmicolor=this.selectBmiColor(this.BMI);
-    this.dataService.getProfileBodyDetails().subscribe(data=>{
-      this.slider=Number(data.height),
-      this.weight=Number(data.weight),
-      this.age=Number(data.age)
-    })
-
   }
   change(){
 const value=(Number(this.weight)/(Number(this.slider)*Number(this.slider)))*10000;

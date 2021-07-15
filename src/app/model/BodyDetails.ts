@@ -3,4 +3,5 @@ export interface BodyDetails {
   age:string;
   height:string;
   weight:string;
+  displayName:string;
 }
