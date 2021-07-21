@@ -1,0 +1,20 @@
+<div class="drawer" #drawer>
+  <div class="ion-text-center">
+
+    <ion-list lines="none">
+      <div class="item-content">
+        <ion-item class="items">
+          <input type="file" id="actual-btn" (change)="detectedFile($event)" hidden/>
+          <label for="actual-btn" [hidden]="isSelected">Choose Profile Picture</label>
+          <label [hidden]="!isSelected" (click)="saveProfile()">Upload Profile Picture</label>
+        </ion-item>
+        <ion-button fill="clear" expand="full" (click)="toggleDrawer()">
+          <div class="drawer-pull"></div>
+        </ion-button>
+      </div>
+
+
+
+    </ion-list>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { BodyDetails } from 'src/app/model/BodyDetails';
 import { DataService } from 'src/app/services/data.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -14,13 +15,16 @@ export class ProfilePage implements OnInit {
   weight:Number=65;
   age:Number=0;
   BMI:Number=0;
+  profile_link="";
   Name=""
+  private loading;
   public bmicolor="";
   public state:String="";
-
+  backdropVisible=false;
   constructor(
    private toastController:ToastController,
-   private dataService:DataService
+   private dataService:DataService,
+   public loadingController: LoadingController
   ) { }
 
    ngOnInit () {
@@ -29,16 +33,31 @@ export class ProfilePage implements OnInit {
       this.slider=Number(data.height),
       this.weight=Number(data.weight),
       this.age=Number(data.age),
-      this.Name=data.displayName
+      this.Name=data.displayName,
+      this.profile_link=data.profile_link
+
     }
 
     )
+
+  }
+
+  loadingOverlay(){
+    this.loadingController.create({
+      message:"Uploading"
+    }).then((overlay)=>{
+this.loading=overlay;
+this.loading.present();
+    });
+  }
+  toggleBackdrop(isVisible){
 
   }
   ngDoCheck(){
     const value=(Number(this.weight)/(Number(this.slider)*Number(this.slider)))*10000;
     this.BMI=Math.round(value * 10 ) / 10;
     this.bmicolor=this.selectBmiColor(this.BMI);
+    localStorage.setItem('currentFirebaseImage', this.profile_link)
   }
   change(){
 const value=(Number(this.weight)/(Number(this.slider)*Number(this.slider)))*10000;
@@ -89,8 +108,13 @@ this.bmicolor=this.selectBmiColor(this.BMI);
     toast.present();
   }
   save(){
-this.dataService.setProfileBodyDetails(this.slider, this.weight);
-this.openToast("Save Successfull");
+this.dataService.setProfileBodyDetails(this.slider, this.weight).then(x=>{
+  this.openToast("Save Successfull");
+})
+
 
 }
+
+
+
 }

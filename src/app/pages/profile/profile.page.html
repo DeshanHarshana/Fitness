@@ -1,9 +1,11 @@
-
+<ion-app>
 
 <ion-content>
+  <div class="backdrop" [ngClass]="backdropVisible ? 'fade-in' : 'fade'" tappable (click)="drawer.toggleDrawer()"></div>
+  <app-drawer (openStateChanged)="toggleBackdrop($event)" #drawer></app-drawer>
 <h1>Mine</h1>
-<ion-avatar class="animate__animated animate__bounceIn">
-  <img src="./assets/avatar.jpg">
+<ion-avatar class="animate__animated animate__bounceIn" (click)="drawer.toggleDrawer()">
+  <img src={{profile_link}}>
 </ion-avatar>
 <h2 class="animate__animated animate__fadeInDown x">{{Name}}</h2>
 <h4 class="animate__animated animate__fadeInDown y">Age : {{age}}</h4>
@@ -52,3 +54,4 @@ W : {{weight}}Kg</h6>
   </ion-card-content>
 </ion-card>
 </ion-content>
+</ion-app>

@@ -103,6 +103,26 @@ text-align: center;
   font-weight: bold;
   margin-top: 30px;
   width: 100%;
+  margin-bottom: 40px;
+}
+.backdrop{
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 10;
+  position:fixed;
+}
+.fade{
+  transition: 0.5s linear all;
+  opacity: 0;
+  z-index: -1;
+}
+.test{
+  background: red;
+}
+.fade-in{
+  transition: 0.5s linear all;
+  opacity: 1;
 }
 .slider2{
   appearance: none;
@@ -129,42 +149,42 @@ text-align: center;
 
 
 .less16{
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bolder;
   color:#0077ff;
 }
 .less17{
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bolder;
   color:#00aaff;
 }
 .less18-5{
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bolder;
   color:#00ffe1;
 }
 .less25{
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bolder;
   color:#0dff00;
 }
 .less30{
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bolder;
   color:#c3ff00;
 }
 .less35{
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bolder;
   color:#fffb00;
 }
 .less40{
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bolder;
   color:#ff9100;
 }
 .less48{
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bolder;
   color:#ff2a00;
 }

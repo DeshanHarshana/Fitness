@@ -4,4 +4,5 @@ export interface BodyDetails {
   height:string;
   weight:string;
   displayName:string;
+  profile_link:string;
 }

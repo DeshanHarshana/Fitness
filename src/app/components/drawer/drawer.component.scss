@@ -1,0 +1,66 @@
+.drawer{
+  position: absolute;
+  box-shadow: rgba(255, 255, 255, 0.12) 0px 4px 16px;
+  width: 100%;
+  border-radius: 70px;
+  top: calc(-77vh + env(safe-area-inset-bottom));
+  height: 75%;
+  z-index: 1;
+  background:black;
+  text-align: center;
+  ion-list{
+    position:absolute;
+    background:transparent;
+    bottom: 0;
+left:23%;
+    justify-content: center;
+
+  	align-items: center!important;
+
+
+
+  }
+}
+.items{
+  --ion-item-background:none;
+  h2{
+    color: white;
+  }
+
+}
+.drawer-pull{
+  background: white;
+  height: 4px;
+  width: 60px;
+  border-radius: 2px;
+
+
+
+}
+
+
+
+label {
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.my-custom-class {
+  --background: #222;
+  --spinner-color: #fff;
+
+  color: #fff;
+}
+/* DOES NOT WORK - not specific enough */
+ion-loading {
+  color: green;
+}
+
+/* Works - pass "my-custom-class" in cssClass to increase specificity */
+.my-custom-class {
+  color: green;
+}

@@ -1,0 +1,28 @@
+
+<ion-content>
+
+  <img [src]="execise_link">
+
+
+<div class="progress">
+  <circle-progress
+  [percent]="percent"
+  [maxPercent]="100"
+  [radius]="100"
+  [showTitle]="true"
+  [showSubtitle]="false"
+  [showUnits]="true"
+
+  [outerStrokeWidth]="16"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#78C000'"
+  [innerStrokeColor]="'#C7E596'"
+  [showZeroOuterStroke]="false"
+  [backgroundStrokeWidth]="3"
+  [animation]="true"
+  [animationDuration]="40000"
+
+></circle-progress>
+</div>
+<ion-button (click)="change()">Click</ion-button>
+</ion-content>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -13,19 +13,36 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { enterAnimation } from './pages/animations/nav-animation';
-import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
+//import { NgxSpinnerModule } from "ngx-spinner/lib/ngx-spinner.module";
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+      animation:false,
+      responsive:true,
+      renderOnClick:false,
+
+
+    }),
     BrowserModule, IonicModule.forRoot({
       navAnimation:enterAnimation
     }), AppRoutingModule,
     AngularFireAuthModule,AngularFireDatabaseModule,AngularFirestoreModule,
 
+
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
