@@ -1,28 +1,36 @@
 
 <ion-content>
-
+<div class="image">
   <img [src]="execise_link">
+</div>
 
 
-<div class="progress">
+
+<div class="progress" (click)="start()">
+
   <circle-progress
-  [percent]="percent"
+  [percent]="value"
+  [title]="title"
   [maxPercent]="100"
-  [radius]="100"
+  [renderOnClick]="isClicked"
+
   [showTitle]="true"
   [showSubtitle]="false"
-  [showUnits]="true"
-
+  [showUnits]="false"
+  [titleColor]="'black'"
   [outerStrokeWidth]="16"
   [innerStrokeWidth]="8"
   [outerStrokeColor]="'#78C000'"
   [innerStrokeColor]="'#C7E596'"
-  [showZeroOuterStroke]="false"
+
   [backgroundStrokeWidth]="3"
   [animation]="true"
-  [animationDuration]="40000"
+  [animationDuration]="0"
+  [showBackground]='false'
+
 
 ></circle-progress>
+
 </div>
-<ion-button (click)="change()">Click</ion-button>
+<div><h2>{{message}}</h2></div>
 </ion-content>

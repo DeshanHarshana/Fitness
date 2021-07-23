@@ -23,12 +23,12 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     NgCircleProgressModule.forRoot({
       // set defaults here
-      radius: 100,
+      radius: 60,
       outerStrokeWidth: 16,
       innerStrokeWidth: 8,
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
-      animationDuration: 300,
+      animationDuration: 30000,
       animation:false,
       responsive:true,
       renderOnClick:false,
