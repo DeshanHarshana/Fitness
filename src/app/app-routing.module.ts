@@ -36,8 +36,24 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tips/tips.module').then( m => m.TipsPageModule)
   },
   {
-    path: 'playground',
+    path: 'playground/:id',
     loadChildren: () => import('./pages/playground/playground.module').then( m => m.PlaygroundPageModule)
+  },
+  {
+    path: 'weight-loss-list',
+    loadChildren: () => import('./pages/weight-loss-list/weight-loss-list.module').then( m => m.WeightLossListPageModule)
+  },
+  {
+    path: 'dietplan',
+    loadChildren: () => import('./pages/dietplan/dietplan.module').then( m => m.DietplanPageModule)
+  },
+  {
+    path: 'dietpaln-intermediate/:id',
+    loadChildren: () => import('./pages/dietpaln-intermediate/dietpaln-intermediate.module').then( m => m.DietpalnIntermediatePageModule)
+  },
+  {
+    path: 'test/:id',
+    loadChildren: () => import('./pages/test/test.module').then( m => m.TestPageModule)
   }
 ];
 @NgModule({

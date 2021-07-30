@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { AuthenticationService } from '../services/authentication.service';
 
@@ -11,6 +12,7 @@ export class Tab1Page {
 
   constructor(public toastController:ToastController,
     public authService:AuthenticationService,
+    public router:Router
 
     ) {}
 
@@ -26,5 +28,10 @@ export class Tab1Page {
     });
     toast.present();
   }
-
+  WeightLoss(){
+    this.router.navigate(['weight-loss-list'])
+  }
+  DietPlan(){
+    this.router.navigate(['dietplan']);
+  }
 }

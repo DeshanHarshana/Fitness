@@ -1,10 +1,10 @@
 <ion-app>
-  <ion-content [fullscreen]="true">
-
+  <ion-content >
+<div class="screen">
     <div class="animate__fadeInUpBig">
 
 
-          <ion-card class="loss animate__animatedn animate__fadeInDownBig p" >
+          <ion-card class="loss animate__animatedn animate__fadeInDownBig p" (click)="WeightLoss()" >
             <ion-card-header>
 <h1>Weight Loss Plans</h1>
             </ion-card-header>
@@ -15,15 +15,8 @@
 
 
 
-          <ion-card class="animate__animated animate__fadeInDownBig x gain">
-            <ion-card-header>
-              <h1>Weight Gain Plans</h1>
-            </ion-card-header>
-            <ion-card-content>
 
-            </ion-card-content>
-          </ion-card>
-          <ion-card class="animate__animated animate__fadeInDownBig y diat">
+          <ion-card class="animate__animated animate__fadeInDownBig y diat" (click)="DietPlan()">
           <ion-card-header>
             <h1>Diet Plans</h1>
           </ion-card-header>
@@ -42,12 +35,13 @@
           </ion-card>
           <ion-card class="animate__animated animate__fadeInDownBig a equ">
             <ion-card-header>
-              <h1>Equipment Tutorial</h1>
+              <h1>Yoga</h1>
             </ion-card-header>
             <ion-card-content >
 
             </ion-card-content>
           </ion-card>
     </div>
+  </div>
   </ion-content>
 </ion-app>

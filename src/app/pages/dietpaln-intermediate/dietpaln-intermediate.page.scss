@@ -1,0 +1,61 @@
+ion-content{
+  --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+  url("/assets/gym-girl.jpg") no-repeat center center / cover;
+  div{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    .x1{
+      text-align: center;
+      position: relative;
+      top:20vh;
+      color: white;
+      animation-duration: 1s;
+      animation-delay: 0.1s;
+    }
+    .x2{
+      text-align: center;
+      position: relative;
+      top:23vh;
+      font-size: 3em;
+      font-weight: bolder;
+      animation-duration: 1s;
+      animation-delay: 0.2s;
+      color: white;
+    }
+    .x3{
+      text-align: center;
+      position: relative;
+      top:26vh;
+      color: white;
+      animation-duration: 1s;
+      animation-delay: 0.3s;
+    }
+    .x4{
+      text-align: center;
+      position: relative;
+      top:29vh;
+      color: white;
+      animation-duration: 1s;
+      animation-delay: 0.4s;
+    }
+    .x5{
+      text-align: center;
+      position: relative;
+top:32vh;
+font-size: small;
+      color: white;
+      animation-duration: 1s;
+      animation-delay: 0.6s;
+    }
+    ion-button{
+      text-align: center;
+      position: relative;
+      top:32vh;
+      animation-duration: 1s;
+      animation-delay: 0.5s;
+      color: white;
+    }
+  }
+}

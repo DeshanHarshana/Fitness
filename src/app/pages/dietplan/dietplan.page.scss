@@ -1,6 +1,6 @@
 ion-content{
-  --background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,1));
-
+  --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+url("/assets/gym-girl.jpg") no-repeat center center / cover;
 
 
 }
@@ -46,46 +46,38 @@ h1{
 
 }
 .screen{
-  margin-bottom: 20vw;
+ text-align: center;
+ margin-bottom: 2vh;
 }
 .p{
   animation-duration: 1.8s;
-  animation-delay: 0.1s;
+  animation-delay: 0s;
 }
 
 .y{
   animation-duration: 1.8s;
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 
 }
 .z{
 
-  animation-delay: 0.3s;
+  animation-delay: 0.2s;
   animation-duration: 1.8s;
-
 }
 .a{
   animation-duration: 1.8s;
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
 
 }
 .loss{
   --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
-url("/assets/loss.jpg") no-repeat center center / cover;
+url("/assets/diet/plan1.jpg") no-repeat center center / cover;
   }
   .gain{
     --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
-    url("/assets/gain.jpg") no-repeat center center / cover;
+    url("/assets/diet/plan2.jpg") no-repeat center center / cover;
   }
   .diat{
     --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
-    url("/assets/diat.jpg") no-repeat center center / cover;
-  }
-  .work{
-    --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
-    url("/assets/work.jpg") no-repeat center center / cover;
-  }
-  .equ{
-    --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
-    url("/assets/equ.jpg") no-repeat center center / cover;
+    url("/assets/diet/plan3.jpg") no-repeat center center / cover;
   }

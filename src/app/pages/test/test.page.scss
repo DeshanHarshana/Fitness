@@ -1,0 +1,26 @@
+
+ion-content{
+  --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+  url("/assets/gym-girl.jpg") no-repeat center center / cover;
+  .watch{
+    text-align: center;
+    font-weight: 900;
+    font-size: 4em;
+  }
+  h1{
+    color: white;
+  }
+  ion-button{
+    text-align: center;
+  }
+  .stop{
+    width: 100%;
+    text-align: center;
+
+
+  }
+  h6{
+    color: white;
+  }
+
+}

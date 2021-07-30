@@ -1,23 +1,22 @@
 
 <ion-content>
-<div [ngClass]='imageStyle'>
-  <img [src]="execise_link">
-</div>
 
 
 
-<div [ngClass]="progressClass"  (click)="start()" >
+<h1 class="watch">{{extrahou}}{{hour}}|{{extramin}}{{minute}}|{{extrasec}}{{second}}</h1>
+<div>
 
   <circle-progress
-  [percent]="value"
-  [title]="title"
+
+  [percent]="precent"
   [maxPercent]="100"
-  [renderOnClick]="isClicked"
+  [renderOnClick]="true"
+  [title]="precentage"
 
   [showTitle]="true"
   [showSubtitle]="false"
   [showUnits]="false"
-  [titleColor]="'black'"
+  [titleColor]="'white'"
   [outerStrokeWidth]="16"
   [innerStrokeWidth]="8"
   [outerStrokeColor]="'#78C000'"
@@ -30,8 +29,10 @@
 
 
 ></circle-progress>
+<div class="stop">
+  <ion-button (click)="test()">{{buttonText}}</ion-button>
+  <h6>Time Duration : {{timeDuration}} Hours</h6>
+</div>
 
 </div>
-<div><h2 [ngClass]="fadeText">{{message}}</h2></div>
-<ion-button size="mediam" (click)="goPlans()" fill="outline">Back</ion-button>
 </ion-content>

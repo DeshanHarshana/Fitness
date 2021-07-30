@@ -1,0 +1,12 @@
+
+<ion-content>
+
+  <div>
+    <h3 class="x1 animate__animated animate__bounceInUp" [hidden]="planisRunning">This Plan Made For</h3>
+    <h1 class="x2 animate__animated animate__bounceInUp" >{{plan_name}}</h1>
+    <h4 class="x3 animate__animated animate__bounceInUp" [hidden]="planisRunning">If You Want To</h4>
+    <h2 class="x4 animate__animated animate__bounceInUp" [hidden]="planisRunning">Follow</h2>
+    <ion-button fill="outline" class="animate__animated animate__bounceInUp" (click)="goPlan()">{{buttonText}}</ion-button>
+    <h6 class="x5 animate__animated animate__bounceInUp" [hidden]="planisRunning">Time Duration {{plan_time}} Hours</h6>
+  </div>
+</ion-content>

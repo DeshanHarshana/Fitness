@@ -13,7 +13,7 @@ const routes: Routes = [
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../pages/playground/playground.module').then(m=>m.PlaygroundPageModule)
+        loadChildren: () => import('../pages/test/test.module').then(m=>m.TestPageModule)
       },
       {
         path: 'tab3',

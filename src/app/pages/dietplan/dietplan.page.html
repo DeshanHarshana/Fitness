@@ -1,0 +1,41 @@
+<ion-app>
+  <ion-content >
+<div class="screen">
+    <div class="animate__fadeInUpBig">
+
+
+          <ion-card class="loss animate__animatedn animate__fadeInDownBig p" (click)="GoPlan(1)">
+            <ion-card-header>
+<h1>Easy</h1>
+            </ion-card-header>
+            <ion-card-content >
+
+            </ion-card-content>
+          </ion-card>
+
+
+
+
+          <ion-card class="animate__animated animate__fadeInDownBig y gain" (click)="GoPlan(2)">
+          <ion-card-header>
+            <h1>Medium</h1>
+          </ion-card-header>
+          <ion-card-content>
+
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="animate__animated animate__fadeInDownBig z diat" (click)="GoPlan(3)">
+            <ion-card-header>
+              <h1>Hard</h1>
+            </ion-card-header>
+            <ion-card-content >
+
+            </ion-card-content>
+          </ion-card>
+
+    </div>
+    <ion-button size="mediam" (click)="gobackPlans()" fill="outline">Back</ion-button>
+  </div>
+  </ion-content>
+</ion-app>
