@@ -22,7 +22,7 @@ export class DietpalnIntermediatePage implements OnInit {
     if(this.plan_id==1){
       if(!(localStorage.getItem('plan1_init_time')==null)){
         this.planisRunning=true;
-        this.plan_name="Continue";
+        this.plan_name="Running One Plan";
 
         this.buttonText="Continue"
       }else{
@@ -35,7 +35,7 @@ export class DietpalnIntermediatePage implements OnInit {
     if(this.plan_id==2){
       if(!(localStorage.getItem('plan1_init_time')==null)){
         this.planisRunning=true;
-        this.plan_name="Continue";
+        this.plan_name="Running One Plan";
 
         this.buttonText="Continue"
       }else{
@@ -48,7 +48,7 @@ export class DietpalnIntermediatePage implements OnInit {
     if(this.plan_id==3){
       if(!(localStorage.getItem('plan1_init_time')==null)){
         this.planisRunning=true;
-        this.plan_name="Continue";
+        this.plan_name="Running One Plan";
         this.plan_time=localStorage.getItem('planDuration');
         this.buttonText="Continue"
       }else{
