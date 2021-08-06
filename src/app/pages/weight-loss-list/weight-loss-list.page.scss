@@ -1,5 +1,5 @@
 ion-content{
-  --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+  --background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
 url("/assets/gym-girl.jpg") no-repeat center center / cover;
 
 
@@ -43,7 +43,6 @@ h1{
 
 
 
-
 }
 .screen{
  text-align: center;
@@ -75,7 +74,7 @@ url("/assets/weighloss/plan1.jpg") no-repeat center center / cover;
   }
   .gain{
     --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
-    url("/assets/weighloss/plan2.jpeg") no-repeat center center / cover;
+    url("/assets/weighloss/plan2.jpg") no-repeat center center / cover;
   }
   .diat{
     --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),

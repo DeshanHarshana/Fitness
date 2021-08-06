@@ -58,6 +58,10 @@ const routes: Routes = [
   {
     path: 'success',
     loadChildren: () => import('./pages/success/success.module').then( m => m.SuccessPageModule)
+  },
+  {
+    path: 'yogaplan',
+    loadChildren: () => import('./pages/yogaplan/yogaplan.module').then( m => m.YogaplanPageModule)
   }
 ];
 @NgModule({

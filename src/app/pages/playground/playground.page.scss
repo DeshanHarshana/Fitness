@@ -1,5 +1,5 @@
 ion-content {
-  --background: linear-gradient(0deg, rgba(7, 0, 0, 0.5), rgba(255, 254, 254, 0.9)),
+  --background: linear-gradient(5deg, rgba(255, 255, 255, 0.1), rgba(255, 254, 254, 3)),
     url("/assets/playground/back.jpg") no-repeat center center/cover;
   text-align: center;
 
@@ -56,3 +56,11 @@ ion-content {
 
 }
 
+.image2 {
+  width: 100%;
+  position: absolute;
+  img{
+    height: 30vh;
+  }
+
+}

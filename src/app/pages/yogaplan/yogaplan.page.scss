@@ -1,0 +1,83 @@
+ion-content{
+  --background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+url("/assets/gym-girl.jpg") no-repeat center center / cover;
+
+
+}
+
+
+
+
+
+
+
+ion-content {
+
+h1{
+  float:left;
+}
+
+  .head{
+    color:white;
+    text-align: center;
+    font-family: fantasy;
+   font-weight: bolder;
+    font-size: 50px;
+  }
+  ion-card {
+
+    width: auto;
+
+    height: 250px;
+    h1{
+      color: white;
+      float: right;
+      font-weight: bolder;
+      padding-top: 180px;
+    }
+
+    border-radius: 25px;
+
+  }
+
+
+
+
+
+}
+.screen{
+ text-align: center;
+ margin-bottom: 2vh;
+}
+.p{
+  animation-duration: 1.8s;
+  animation-delay: 0s;
+}
+
+.y{
+  animation-duration: 1.8s;
+  animation-delay: 0.1s;
+
+}
+.z{
+
+  animation-delay: 0.2s;
+  animation-duration: 1.8s;
+}
+.a{
+  animation-duration: 1.8s;
+  animation-delay: 0.3s;
+
+}
+.loss{
+  --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
+url("/assets/yoga/plan1.jpg") no-repeat center center / cover;
+  }
+  .gain{
+    --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
+    url("/assets/yoga/plan2.jpg") no-repeat center center / cover;
+  }
+  .diat{
+    --background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0)),
+    url("/assets/yoga/plan3.jpg") no-repeat center center / cover;
+  }

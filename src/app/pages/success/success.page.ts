@@ -13,7 +13,7 @@ export class SuccessPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    localStorage.removeItem('timeDuration')
+    localStorage.removeItem('timeDuration');
     localStorage.removeItem('plan1_init_time');
     localStorage.removeItem('plansize');
     localStorage.removeItem('planDuration');

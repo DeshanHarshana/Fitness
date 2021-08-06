@@ -4,6 +4,7 @@
 
 
 <h1 class="watch">{{extrahou}}{{hour}}|{{extramin}}{{minute}}|{{extrasec}}{{second}}</h1>
+
 <div>
 
   <circle-progress
@@ -32,7 +33,11 @@
 
 
 ></circle-progress>
+
 <div class="stop">
+  <ion-button size="small" color="warning" (click)="presentAlert()">Info</ion-button>
+  <ion-button size="small" color="warning" (click)="MainMenu()">Menu</ion-button>
+  <br>
   <ion-button (click)="test()">{{buttonText}}</ion-button>
   <h6>Time Duration : {{timeDuration}} Hours</h6>
 </div>

@@ -33,5 +33,10 @@ export class Tab1Page {
   }
   DietPlan(){
     this.router.navigate(['dietplan']);
+
+
+  }
+  YogaPlan(){
+    this.router.navigate(['yogaplan']);
   }
 }

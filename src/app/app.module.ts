@@ -38,7 +38,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     BrowserModule, IonicModule.forRoot({
       navAnimation:enterAnimation
     }), AppRoutingModule,
-    AngularFireAuthModule,AngularFireDatabaseModule,AngularFirestoreModule,
+    AngularFireAuthModule,AngularFireDatabaseModule,AngularFirestoreModule
 
 
   ],

@@ -150,7 +150,12 @@
     --background: #600001;
     --spinner-color: yellow;
   }
-
+  .alertCancel{
+    --background: red;
+      button.alertButton{
+        color: white;
+      }
+   }
   /*
    * iOS Dark Theme
    * -------------------------------------------

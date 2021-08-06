@@ -26,3 +26,14 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 @import '~animate.css/animate.min.css';
+.TextSelectable {
+  --background: #f5c012 !important;
+  user-select: text;
+  color: white;
+  .alert-message {
+    text-align: center;
+    color: black;
+
+  }
+
+}

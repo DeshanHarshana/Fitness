@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-playground',
   templateUrl: './playground.page.html',
@@ -19,10 +20,13 @@ export class PlaygroundPage implements OnInit {
   counter: number = 0;
   parmsId: number = 0;
   progressClass:string
-  restTime:number=100;
-  progressTime:number=100;
+  restTime:number=600;
+  progressTime:number=1500;
+  readyTime:number=200;
+  heightImage=""
+  constructor(private location: Location, private route: ActivatedRoute,
 
-  constructor(private location: Location, private route: ActivatedRoute) {}
+    ) {}
 
   ngOnInit() {
     this.imageStyle = 'animate__animated animate__fadeInDown image';
@@ -37,6 +41,15 @@ export class PlaygroundPage implements OnInit {
     }
     if(this.parmsId==3){
       this.progressClass="progress3 animate__animated animate__bounceIn"
+    }
+    if(this.parmsId==4){
+      this.progressClass="progress2 animate__animated animate__bounceIn"
+    }
+    if(this.parmsId==5){
+      this.progressClass="progress2 animate__animated animate__bounceIn"
+    }
+    if(this.parmsId==6){
+      this.progressClass="progress2 animate__animated animate__bounceIn"
     }
   }
   goPlans() {
@@ -97,24 +110,78 @@ export class PlaygroundPage implements OnInit {
         this.imageStyle = 'image';
       }
     }
+    if (this.parmsId == 4) {
+      if (this.isClicked) {
+        this.imageStyle = 'animate__animated animate__fadeInDown image';
+        this.execise_link = 'assets/playground/ready.gif';
+        this.isClicked = false;
+        this.title = 'Start';
+        this.value = 0;
+        this.message = '';
+        clearInterval(this.timer);
+        this.imageStyle = 'image';
+      } else {
+        this.isClicked = true;
+        this.title = 'Stop';
+        this.yoga1begin();
+        this.value = 0;
+        this.imageStyle = 'image';
+      }
+    }
+    if (this.parmsId == 5) {
+      if (this.isClicked) {
+        this.imageStyle = 'animate__animated animate__fadeInDown image';
+        this.execise_link = 'assets/playground/ready.gif';
+        this.isClicked = false;
+        this.title = 'Start';
+        this.value = 0;
+        this.message = '';
+        clearInterval(this.timer);
+        this.imageStyle = 'image';
+      } else {
+        this.isClicked = true;
+        this.title = 'Stop';
+        this.yoga1begin2();
+        this.value = 0;
+        this.imageStyle = 'image';
+      }
+    }
+    if (this.parmsId == 6) {
+      if (this.isClicked) {
+        this.imageStyle = 'animate__animated animate__fadeInDown image';
+        this.execise_link = 'assets/playground/ready.gif';
+        this.isClicked = false;
+        this.title = 'Start';
+        this.value = 0;
+        this.message = '';
+        clearInterval(this.timer);
+        this.imageStyle = 'image';
+      } else {
+        this.isClicked = true;
+        this.title = 'Stop';
+        this.yoga1begin3();
+        this.value = 0;
+        this.imageStyle = 'image';
+      }
+    }
   }
   //pack 1 wedigt loss plan1
   begin() {
     this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Ready For Execise';
+    this.message = 'Ready For Exercise';
 
     this.timer = setInterval(() => {
       this.value++;
 
       if (this.value >= 100) {
         this.fadeText = 'animate__animated animate__fadeInLeft';
-        this.message = 'Now Do execise in Screen';
+        this.message = 'Exercise';
         this.value = 0;
         clearInterval(this.timer);
 
         this.pack1();
       }
-    }, this.progressTime);
+    }, this.readyTime);
   }
 
   pack1() {
@@ -122,7 +189,7 @@ export class PlaygroundPage implements OnInit {
       this.imageStyle = 'animate__animated animate__fadeInRight image';
       this.execise_link = 'assets/basic1/1.gif';
       this.fadeText = 'animate__animated animate__fadeInRight';
-      this.message = 'Now Do execise in Screen';
+      this.message = 'Exercise';
 
       this.timer = setInterval(() => {
         this.value++;
@@ -133,7 +200,7 @@ export class PlaygroundPage implements OnInit {
 
           this.rest();
         }
-      }, 10);
+      }, this.progressTime);
     } else {
       this.end();
     }
@@ -143,7 +210,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/playground/rest.gif';
     this.title = 'Rest';
     this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
+    this.message = 'Resting Time';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -161,7 +228,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/basic1/2.gif';
     this.title = 'Stop';
     this.fadeText = 'animate__animated animate__fadeInRight';
-    this.message = 'Now Do execise in Screen';
+    this.message = 'Exercise';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -179,7 +246,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/playground/rest.gif';
     this.title = 'Rest';
     this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
+    this.message = 'Resting Time';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -197,7 +264,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/basic1/3.gif';
     this.title = 'Stop';
     this.fadeText = 'animate__animated animate__fadeInRight';
-    this.message = 'Now Do execise in Screen';
+    this.message = 'Exercise';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -215,7 +282,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/playground/rest.gif';
     this.title = 'Rest';
     this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
+    this.message = 'Resting Time';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -252,21 +319,22 @@ export class PlaygroundPage implements OnInit {
 
       if (this.value >= 100) {
         this.fadeText = 'animate__animated animate__fadeInLeft';
-        this.message = 'Now Do execise in Screen';
+        this.message = 'Exercise';
         this.value = 0;
         clearInterval(this.timer);
 
         this.pack112();
       }
-    }, this.progressTime);
+    }, this.readyTime);
   }
 
   pack112() {
+
     if (this.counter < 5) {
-      this.imageStyle = 'animate__animated animate__fadeInRight image';
+      this.imageStyle = 'animate__animated animate__fadeInRight image2';
       this.execise_link = 'assets/basic2/1.gif';
       this.fadeText = 'animate__animated animate__fadeInRight';
-      this.message = 'Now Do execise in Screen';
+      this.message = 'Exercise';
 
       this.timer = setInterval(() => {
         this.value++;
@@ -276,6 +344,7 @@ export class PlaygroundPage implements OnInit {
           this.value = 0;
 
           this.rest112();
+
         }
       }, this.progressTime);
     } else {
@@ -287,7 +356,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/playground/rest.gif';
     this.title = 'Rest';
     this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
+    this.message = 'Resting Time';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -302,10 +371,10 @@ export class PlaygroundPage implements OnInit {
   }
   pack113() {
     this.imageStyle = 'animate__animated animate__fadeInRight image';
-    this.execise_link = 'assets/basic2/3.gif';
+    this.execise_link = 'assets/basic2/2.gif';
     this.title = 'Stop';
     this.fadeText = 'animate__animated animate__fadeInRight';
-    this.message = 'Now Do execise in Screen';
+    this.message = 'Exercise';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -323,7 +392,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/playground/rest.gif';
     this.title = 'Rest';
     this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
+    this.message = 'Resting Time';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -338,10 +407,10 @@ export class PlaygroundPage implements OnInit {
   }
   pack114() {
     this.imageStyle = 'animate__animated animate__fadeInRight image';
-    this.execise_link = 'assets/basic2/4.gif';
+    this.execise_link = 'assets/basic2/3.gif';
     this.title = 'Stop';
     this.fadeText = 'animate__animated animate__fadeInRight';
-    this.message = 'Now Do execise in Screen';
+    this.message = 'Exercise';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -359,7 +428,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/playground/rest.gif';
     this.title = 'Rest';
     this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
+    this.message = 'Resting Time';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -376,10 +445,10 @@ export class PlaygroundPage implements OnInit {
   }
   pack116() {
     this.imageStyle = 'animate__animated animate__fadeInRight image';
-    this.execise_link = 'assets/basic2/5.gif';
+    this.execise_link = 'assets/basic2/4.gif';
     this.title = 'Stop';
     this.fadeText = 'animate__animated animate__fadeInRight';
-    this.message = 'Now Do execise in Screen';
+    this.message = 'Exercise';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -397,83 +466,7 @@ export class PlaygroundPage implements OnInit {
     this.execise_link = 'assets/playground/rest.gif';
     this.title = 'Rest';
     this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
-
-    this.timer = setInterval(() => {
-      this.value++;
-
-      if (this.value >= 100) {
-        clearInterval(this.timer);
-        this.value = 0;
-        this.fadeText = '';
-
-        this.pack118();
-
-      }
-    }, this.restTime);
-  }
-  pack118() {
-    this.imageStyle = 'animate__animated animate__fadeInRight image';
-    this.execise_link = 'assets/basic2/6.gif';
-    this.title = 'Stop';
-    this.fadeText = 'animate__animated animate__fadeInRight';
-    this.message = 'Now Do execise in Screen';
-
-    this.timer = setInterval(() => {
-      this.value++;
-
-      if (this.value >= 100) {
-        clearInterval(this.timer);
-        this.value = 0;
-
-        this.rest119();
-      }
-    }, this.progressTime);
-  }
-  rest119() {
-    this.imageStyle = 'animate__animated animate__fadeInLeft image';
-    this.execise_link = 'assets/playground/rest.gif';
-    this.title = 'Rest';
-    this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
-
-    this.timer = setInterval(() => {
-      this.value++;
-
-      if (this.value >= 100) {
-        clearInterval(this.timer);
-        this.value = 0;
-        this.fadeText = '';
-
-        this.pack120();
-
-      }
-    }, this.restTime);
-  }
-  pack120() {
-    this.imageStyle = 'animate__animated animate__fadeInRight image';
-    this.execise_link = 'assets/basic2/7.gif';
-    this.title = 'Stop';
-    this.fadeText = 'animate__animated animate__fadeInRight';
-    this.message = 'Now Do execise in Screen';
-
-    this.timer = setInterval(() => {
-      this.value++;
-
-      if (this.value >= 100) {
-        clearInterval(this.timer);
-        this.value = 0;
-
-        this.rest121();
-      }
-    }, this.progressTime);
-  }
-  rest121() {
-    this.imageStyle = 'animate__animated animate__fadeInLeft image';
-    this.execise_link = 'assets/playground/rest.gif';
-    this.title = 'Rest';
-    this.fadeText = 'animate__animated animate__fadeInLeft';
-    this.message = 'Now resting time';
+    this.message = 'Resting Time';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -484,7 +477,7 @@ export class PlaygroundPage implements OnInit {
         this.fadeText = '';
 
         this.pack112();
-        this.counter++;
+
       }
     }, this.restTime);
   }
@@ -510,13 +503,13 @@ begin212() {
 
     if (this.value >= 100) {
       this.fadeText = 'animate__animated animate__fadeInLeft';
-      this.message = 'Now Do execise in Screen';
+      this.message = 'Exercise';
       this.value = 0;
       clearInterval(this.timer);
 
       this.pack212();
     }
-  }, this.progressTime);
+  }, this.readyTime);
 }
 
 pack212() {
@@ -524,7 +517,7 @@ pack212() {
     this.imageStyle = 'animate__animated animate__fadeInRight image';
     this.execise_link = 'assets/basic3/1.gif';
     this.fadeText = 'animate__animated animate__fadeInRight';
-    this.message = 'Now Do execise in Screen';
+    this.message = 'Exercise';
 
     this.timer = setInterval(() => {
       this.value++;
@@ -545,7 +538,7 @@ rest212() {
   this.execise_link = 'assets/playground/rest.gif';
   this.title = 'Rest';
   this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
+  this.message = 'Resting Time';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -563,7 +556,7 @@ pack213() {
   this.execise_link = 'assets/basic3/2.gif';
   this.title = 'Stop';
   this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
+  this.message = 'Exercise';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -581,7 +574,7 @@ rest213() {
   this.execise_link = 'assets/playground/rest.gif';
   this.title = 'Rest';
   this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
+  this.message = 'Resting Time';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -599,7 +592,7 @@ pack214() {
   this.execise_link = 'assets/basic3/3.gif';
   this.title = 'Stop';
   this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
+  this.message = 'Exercise';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -617,7 +610,7 @@ rest215() {
   this.execise_link = 'assets/playground/rest.gif';
   this.title = 'Rest';
   this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
+  this.message = 'Resting Time';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -637,7 +630,7 @@ pack216() {
   this.execise_link = 'assets/basic3/4.gif';
   this.title = 'Stop';
   this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
+  this.message = 'Exercise';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -655,7 +648,7 @@ rest217() {
   this.execise_link = 'assets/playground/rest.gif';
   this.title = 'Rest';
   this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
+  this.message = 'Resting Time';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -675,7 +668,7 @@ pack218() {
   this.execise_link = 'assets/basic3/5.gif';
   this.title = 'Stop';
   this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
+  this.message = 'Exercise';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -693,312 +686,7 @@ rest219() {
   this.execise_link = 'assets/playground/rest.gif';
   this.title = 'Rest';
   this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-      this.fadeText = '';
-
-      this.pack220();
-
-    }
-  }, this.restTime);
-}
-pack220() {
-  this.imageStyle = 'animate__animated animate__fadeInRight image';
-  this.execise_link = 'assets/basic3/6.gif';
-  this.title = 'Stop';
-  this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-
-      this.rest221();
-    }
-  }, this.progressTime);
-}
-rest221() {
-  this.imageStyle = 'animate__animated animate__fadeInLeft image';
-  this.execise_link = 'assets/playground/rest.gif';
-  this.title = 'Rest';
-  this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-      this.fadeText = '';
-
-      this.pack221();
-      this.counter++;
-    }
-  }, this.restTime);
-}
-pack221() {
-  this.imageStyle = 'animate__animated animate__fadeInRight image';
-  this.execise_link = 'assets/basic3/6.gif';
-  this.title = 'Stop';
-  this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-
-      this.rest222();
-    }
-  }, this.progressTime);
-}
-rest222() {
-  this.imageStyle = 'animate__animated animate__fadeInLeft image';
-  this.execise_link = 'assets/playground/rest.gif';
-  this.title = 'Rest';
-  this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-      this.fadeText = '';
-
-      this.pack222();
-      this.counter++;
-    }
-  }, this.restTime);
-}
-
-pack222() {
-  this.imageStyle = 'animate__animated animate__fadeInRight image';
-  this.execise_link = 'assets/basic3/7.gif';
-  this.title = 'Stop';
-  this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-
-      this.rest223();
-    }
-  }, this.progressTime);
-}
-rest223() {
-  this.imageStyle = 'animate__animated animate__fadeInLeft image';
-  this.execise_link = 'assets/playground/rest.gif';
-  this.title = 'Rest';
-  this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-      this.fadeText = '';
-
-      this.pack223();
-
-    }
-  }, this.restTime);
-}
-pack223() {
-  this.imageStyle = 'animate__animated animate__fadeInRight image';
-  this.execise_link = 'assets/basic3/8.gif';
-  this.title = 'Stop';
-  this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-
-      this.rest224();
-    }
-  }, this.progressTime);
-}
-rest224() {
-  this.imageStyle = 'animate__animated animate__fadeInLeft image';
-  this.execise_link = 'assets/playground/rest.gif';
-  this.title = 'Rest';
-  this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-      this.fadeText = '';
-
-      this.pack224();
-      this.counter++;
-    }
-  }, this.restTime);
-}
-pack224() {
-  this.imageStyle = 'animate__animated animate__fadeInRight image';
-  this.execise_link = 'assets/basic3/9.gif';
-  this.title = 'Stop';
-  this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-
-      this.rest225();
-    }
-  }, this.progressTime);
-}
-rest225() {
-  this.imageStyle = 'animate__animated animate__fadeInLeft image';
-  this.execise_link = 'assets/playground/rest.gif';
-  this.title = 'Rest';
-  this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-      this.fadeText = '';
-
-      this.pack226();
-      this.counter++;
-    }
-  }, this.restTime);
-}
-pack226() {
-  this.imageStyle = 'animate__animated animate__fadeInRight image';
-  this.execise_link = 'assets/basic3/10.gif';
-  this.title = 'Stop';
-  this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-
-      this.rest226();
-    }
-  }, this.progressTime);
-}
-rest226() {
-  this.imageStyle = 'animate__animated animate__fadeInLeft image';
-  this.execise_link = 'assets/playground/rest.gif';
-  this.title = 'Rest';
-  this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-      this.fadeText = '';
-
-      this.pack227();
-      this.counter++;
-    }
-  }, this.restTime);
-}
-pack227() {
-  this.imageStyle = 'animate__animated animate__fadeInRight image';
-  this.execise_link = 'assets/basic3/11.gif';
-  this.title = 'Stop';
-  this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-
-      this.rest227();
-    }
-  }, this.progressTime);
-}
-rest227() {
-  this.imageStyle = 'animate__animated animate__fadeInLeft image';
-  this.execise_link = 'assets/playground/rest.gif';
-  this.title = 'Rest';
-  this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-      this.fadeText = '';
-
-      this.pack218();
-      this.counter++;
-    }
-  }, this.restTime);
-}
-pack228() {
-  this.imageStyle = 'animate__animated animate__fadeInRight image';
-  this.execise_link = 'assets/basic3/12.gif';
-  this.title = 'Stop';
-  this.fadeText = 'animate__animated animate__fadeInRight';
-  this.message = 'Now Do execise in Screen';
-
-  this.timer = setInterval(() => {
-    this.value++;
-
-    if (this.value >= 100) {
-      clearInterval(this.timer);
-      this.value = 0;
-
-      this.rest228();
-    }
-  }, this.progressTime);
-}
-rest228() {
-  this.imageStyle = 'animate__animated animate__fadeInLeft image';
-  this.execise_link = 'assets/playground/rest.gif';
-  this.title = 'Rest';
-  this.fadeText = 'animate__animated animate__fadeInLeft';
-  this.message = 'Now resting time';
+  this.message = 'Resting Time';
 
   this.timer = setInterval(() => {
     this.value++;
@@ -1010,9 +698,11 @@ rest228() {
 
       this.pack212();
       this.counter++;
+
     }
   }, this.restTime);
 }
+
 end212() {
   this.execise_link = '';
   this.counter = 0;
@@ -1023,5 +713,527 @@ end212() {
   clearInterval(this.timer);
   this.title = 'Over';
 }
+yoga1begin(){
+
+    this.fadeText = 'animate__animated animate__fadeInLeft';
+    this.message = 'Ready For Yoga';
+    this.title = 'Stop';
+    this.timer = setInterval(() => {
+      this.value++;
+
+      if (this.value >= 100) {
+        this.fadeText = 'animate__animated animate__fadeInLeft';
+        this.message = 'Exercise';
+        this.value = 0;
+        clearInterval(this.timer);
+
+        this.yoga11();
+      }
+    }, this.readyTime);
+
 
 }
+yoga11(){
+if (this.counter < 5) {
+  this.imageStyle = 'animate__animated animate__fadeInRight image2';
+  this.execise_link = 'assets/yoga1/1.gif';
+  this.fadeText = 'animate__animated animate__fadeInRight';
+  this.message = 'Exercise';
+  this.title = 'Stop';
+  this.timer = setInterval(() => {
+    this.value++;
+
+    if (this.value >= 100) {
+      clearInterval(this.timer);
+      this.value = 0;
+
+      this.rest12();
+
+    }
+  }, this.progressTime);
+} else {
+  this.end112();
+}
+}
+rest12() {
+this.imageStyle = 'animate__animated animate__fadeInDown image';
+this.execise_link = 'assets/playground/rest.gif';
+this.title = 'Rest';
+this.fadeText = 'animate__animated animate__fadeInLeft';
+this.message = 'Resting Time';
+
+this.timer = setInterval(() => {
+  this.value++;
+
+  if (this.value >= 100) {
+    clearInterval(this.timer);
+    this.value = 0;
+
+    this.yoga12();
+  }
+}, this.restTime);
+}
+
+yoga12(){
+  this.imageStyle = 'animate__animated animate__fadeInRight image2';
+  this.execise_link = 'assets/yoga1/2.gif';
+  this.fadeText = 'animate__animated animate__fadeInRight';
+  this.message = 'Exercise';
+  this.title = 'Stop';
+  this.timer = setInterval(() => {
+    this.value++;
+
+    if (this.value >= 100) {
+      clearInterval(this.timer);
+      this.value = 0;
+
+      this.rest13();
+
+    }
+  }, this.progressTime);
+
+}
+rest13() {
+  this.imageStyle = 'animate__animated animate__fadeInDown image';
+  this.execise_link = 'assets/playground/rest.gif';
+  this.title = 'Rest';
+  this.fadeText = 'animate__animated animate__fadeInLeft';
+  this.message = 'Resting Time';
+
+  this.timer = setInterval(() => {
+    this.value++;
+
+    if (this.value >= 100) {
+      clearInterval(this.timer);
+      this.value = 0;
+
+      this.yoga13();
+    }
+  }, this.restTime);
+  }
+  yoga13(){
+    this.imageStyle = 'animate__animated animate__fadeInRight image2';
+    this.execise_link = 'assets/yoga1/3.gif';
+    this.fadeText = 'animate__animated animate__fadeInRight';
+    this.message = 'Exercise';
+    this.title = 'Stop';
+    this.timer = setInterval(() => {
+      this.value++;
+
+      if (this.value >= 100) {
+        clearInterval(this.timer);
+        this.value = 0;
+
+        this.rest14();
+
+      }
+    }, this.progressTime);
+
+  }
+  rest14() {
+    this.imageStyle = 'animate__animated animate__fadeInDown image';
+    this.execise_link = 'assets/playground/rest.gif';
+    this.title = 'Rest';
+    this.fadeText = 'animate__animated animate__fadeInLeft';
+    this.message = 'Resting Time';
+
+    this.timer = setInterval(() => {
+      this.value++;
+
+      if (this.value >= 100) {
+        clearInterval(this.timer);
+        this.value = 0;
+
+        this.yoga11();
+        this.counter++;
+      }
+    }, this.restTime);
+    }
+
+yoga1begin2(){
+
+  this.fadeText = 'animate__animated animate__fadeInLeft';
+  this.message = 'Ready For Yoga';
+  this.title = 'Stop';
+  this.timer = setInterval(() => {
+    this.value++;
+
+    if (this.value >= 100) {
+      this.fadeText = 'animate__animated animate__fadeInLeft';
+      this.message = 'Exercise';
+      this.value = 0;
+      clearInterval(this.timer);
+
+      this.yoga21();
+    }
+  }, this.readyTime);
+
+
+}
+yoga21(){
+  if (this.counter < 5) {
+    this.imageStyle = 'animate__animated animate__fadeInRight image2';
+    this.execise_link = 'assets/yoga2/1.gif';
+    this.fadeText = 'animate__animated animate__fadeInRight';
+    this.message = 'Exercise';
+    this.title = 'Stop';
+    this.timer = setInterval(() => {
+      this.value++;
+
+      if (this.value >= 100) {
+        clearInterval(this.timer);
+        this.value = 0;
+
+        this.rest22();
+
+      }
+    }, this.progressTime);
+  } else {
+    this.end112();
+  }
+  }
+  rest22() {
+  this.imageStyle = 'animate__animated animate__fadeInDown image';
+  this.execise_link = 'assets/playground/rest.gif';
+  this.title = 'Rest';
+  this.fadeText = 'animate__animated animate__fadeInLeft';
+  this.message = 'Resting Time';
+
+  this.timer = setInterval(() => {
+    this.value++;
+
+    if (this.value >= 100) {
+      clearInterval(this.timer);
+      this.value = 0;
+
+      this.yoga22();
+    }
+  }, this.restTime);
+  }
+
+  yoga22(){
+    this.imageStyle = 'animate__animated animate__fadeInRight image2';
+    this.execise_link = 'assets/yoga2/2.gif';
+    this.fadeText = 'animate__animated animate__fadeInRight';
+    this.message = 'Exercise';
+    this.title = 'Stop';
+    this.timer = setInterval(() => {
+      this.value++;
+
+      if (this.value >= 100) {
+        clearInterval(this.timer);
+        this.value = 0;
+
+        this.rest23();
+
+      }
+    }, this.progressTime);
+
+  }
+  rest23() {
+    this.imageStyle = 'animate__animated animate__fadeInDown image';
+    this.execise_link = 'assets/playground/rest.gif';
+    this.title = 'Rest';
+    this.fadeText = 'animate__animated animate__fadeInLeft';
+    this.message = 'Resting Time';
+
+    this.timer = setInterval(() => {
+      this.value++;
+
+      if (this.value >= 100) {
+        clearInterval(this.timer);
+        this.value = 0;
+
+        this.yoga23();
+      }
+    }, this.restTime);
+    }
+    yoga23(){
+      this.imageStyle = 'animate__animated animate__fadeInRight image2';
+      this.execise_link = 'assets/yoga2/3.gif';
+      this.fadeText = 'animate__animated animate__fadeInRight';
+      this.message = 'Exercise';
+      this.title = 'Stop';
+      this.timer = setInterval(() => {
+        this.value++;
+
+        if (this.value >= 100) {
+          clearInterval(this.timer);
+          this.value = 0;
+
+          this.rest25();
+
+        }
+      }, this.progressTime);
+
+    }
+    rest25() {
+      this.imageStyle = 'animate__animated animate__fadeInDown image';
+      this.execise_link = 'assets/playground/rest.gif';
+      this.title = 'Rest';
+      this.fadeText = 'animate__animated animate__fadeInLeft';
+      this.message = 'Resting Time';
+
+      this.timer = setInterval(() => {
+        this.value++;
+
+        if (this.value >= 100) {
+          clearInterval(this.timer);
+          this.value = 0;
+
+          this.yoga24();
+        }
+      }, this.restTime);
+      }
+      yoga24(){
+        this.imageStyle = 'animate__animated animate__fadeInRight image2';
+        this.execise_link = 'assets/yoga2/4.gif';
+        this.fadeText = 'animate__animated animate__fadeInRight';
+        this.message = 'Exercise';
+        this.title = 'Stop';
+        this.timer = setInterval(() => {
+          this.value++;
+
+          if (this.value >= 100) {
+            clearInterval(this.timer);
+            this.value = 0;
+
+            this.rest26();
+
+          }
+        }, this.progressTime);
+
+      }
+      rest26() {
+        this.imageStyle = 'animate__animated animate__fadeInDown image';
+        this.execise_link = 'assets/playground/rest.gif';
+        this.title = 'Rest';
+        this.fadeText = 'animate__animated animate__fadeInLeft';
+        this.message = 'Resting Time';
+
+        this.timer = setInterval(() => {
+          this.value++;
+
+          if (this.value >= 100) {
+            clearInterval(this.timer);
+            this.value = 0;
+            this.counter++;
+            this.yoga21();
+
+          }
+        }, this.restTime);
+        }
+
+        yoga1begin3(){
+
+          this.fadeText = 'animate__animated animate__fadeInLeft';
+          this.message = 'Ready For Yoga';
+          this.title = 'Stop';
+          this.timer = setInterval(() => {
+            this.value++;
+
+            if (this.value >= 100) {
+              this.fadeText = 'animate__animated animate__fadeInLeft';
+              this.message = 'Exercise';
+              this.value = 0;
+              clearInterval(this.timer);
+
+              this.yoga31();
+            }
+          }, this.readyTime);
+
+
+        }
+        yoga31(){
+          if (this.counter < 5) {
+            this.imageStyle = 'animate__animated animate__fadeInRight image2';
+            this.execise_link = 'assets/yoga3/1.gif';
+            this.fadeText = 'animate__animated animate__fadeInRight';
+            this.message = 'Exercise';
+            this.title = 'Stop';
+            this.timer = setInterval(() => {
+              this.value++;
+
+              if (this.value >= 100) {
+                clearInterval(this.timer);
+                this.value = 0;
+
+                this.rest32();
+
+              }
+            }, this.progressTime);
+          } else {
+            this.end112();
+          }
+          }
+          rest32() {
+          this.imageStyle = 'animate__animated animate__fadeInDown image';
+          this.execise_link = 'assets/playground/rest.gif';
+          this.title = 'Rest';
+          this.fadeText = 'animate__animated animate__fadeInLeft';
+          this.message = 'Resting Time';
+
+          this.timer = setInterval(() => {
+            this.value++;
+
+            if (this.value >= 100) {
+              clearInterval(this.timer);
+              this.value = 0;
+
+              this.yoga32();
+            }
+          }, this.restTime);
+          }
+
+          yoga32(){
+            this.imageStyle = 'animate__animated animate__fadeInRight image2';
+            this.execise_link = 'assets/yoga3/2.gif';
+            this.fadeText = 'animate__animated animate__fadeInRight';
+            this.message = 'Exercise';
+            this.title = 'Stop';
+            this.timer = setInterval(() => {
+              this.value++;
+
+              if (this.value >= 100) {
+                clearInterval(this.timer);
+                this.value = 0;
+
+                this.rest33();
+
+              }
+            }, this.progressTime);
+
+          }
+          rest33() {
+            this.imageStyle = 'animate__animated animate__fadeInDown image';
+            this.execise_link = 'assets/playground/rest.gif';
+            this.title = 'Rest';
+            this.fadeText = 'animate__animated animate__fadeInLeft';
+            this.message = 'Resting Time';
+
+            this.timer = setInterval(() => {
+              this.value++;
+
+              if (this.value >= 100) {
+                clearInterval(this.timer);
+                this.value = 0;
+
+                this.yoga33();
+              }
+            }, this.restTime);
+            }
+            yoga33(){
+              this.imageStyle = 'animate__animated animate__fadeInRight image2';
+              this.execise_link = 'assets/yoga3/3.gif';
+              this.fadeText = 'animate__animated animate__fadeInRight';
+              this.message = 'Exercise';
+              this.title = 'Stop';
+              this.timer = setInterval(() => {
+                this.value++;
+
+                if (this.value >= 100) {
+                  clearInterval(this.timer);
+                  this.value = 0;
+
+                  this.rest35();
+
+                }
+              }, this.progressTime);
+
+            }
+            rest35() {
+              this.imageStyle = 'animate__animated animate__fadeInDown image';
+              this.execise_link = 'assets/playground/rest.gif';
+              this.title = 'Rest';
+              this.fadeText = 'animate__animated animate__fadeInLeft';
+              this.message = 'Resting Time';
+
+              this.timer = setInterval(() => {
+                this.value++;
+
+                if (this.value >= 100) {
+                  clearInterval(this.timer);
+                  this.value = 0;
+
+                  this.yoga34();
+                }
+              }, this.restTime);
+              }
+              yoga34(){
+                this.imageStyle = 'animate__animated animate__fadeInRight image2';
+                this.execise_link = 'assets/yoga3/4.gif';
+                this.fadeText = 'animate__animated animate__fadeInRight';
+                this.message = 'Exercise';
+                this.title = 'Stop';
+                this.timer = setInterval(() => {
+                  this.value++;
+
+                  if (this.value >= 100) {
+                    clearInterval(this.timer);
+                    this.value = 0;
+
+                    this.rest36();
+
+                  }
+                }, this.progressTime);
+
+              }
+              rest36() {
+                this.imageStyle = 'animate__animated animate__fadeInDown image';
+                this.execise_link = 'assets/playground/rest.gif';
+                this.title = 'Rest';
+                this.fadeText = 'animate__animated animate__fadeInLeft';
+                this.message = 'Resting Time';
+
+                this.timer = setInterval(() => {
+                  this.value++;
+
+                  if (this.value >= 100) {
+                    clearInterval(this.timer);
+                    this.value = 0;
+
+                    this.yoga35();
+                  }
+                }, this.restTime);
+                }
+                yoga35(){
+                  this.imageStyle = 'animate__animated animate__fadeInRight image2';
+                  this.execise_link = 'assets/yoga3/5.gif';
+                  this.fadeText = 'animate__animated animate__fadeInRight';
+                  this.message = 'Exercise';
+                  this.title = 'Stop';
+                  this.timer = setInterval(() => {
+                    this.value++;
+
+                    if (this.value >= 100) {
+                      clearInterval(this.timer);
+                      this.value = 0;
+
+                      this.rest37();
+
+                    }
+                  }, this.progressTime);
+
+                }
+                rest37() {
+                  this.imageStyle = 'animate__animated animate__fadeInDown image';
+                  this.execise_link = 'assets/playground/rest.gif';
+                  this.title = 'Rest';
+                  this.fadeText = 'animate__animated animate__fadeInLeft';
+                  this.message = 'Resting Time';
+
+                  this.timer = setInterval(() => {
+                    this.value++;
+
+                    if (this.value >= 100) {
+                      clearInterval(this.timer);
+                      this.value = 0;
+                      this.counter++;
+                      this.yoga31();
+                    }
+                  }, this.restTime);
+                  }
+
+        }
+
+
