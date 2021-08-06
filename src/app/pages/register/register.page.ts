@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -13,19 +13,34 @@ export class RegisterPage implements OnInit {
   name:String;
   email:String;
   password:String;
+  private loading;
   constructor(
     public authService: AuthenticationService,
     public router: Router,
     public toastController:ToastController,
     private afs:AngularFirestore,
+
+
+   public loadingController: LoadingController,
   ) { }
 
   ngOnInit() {
   }
+  loadingOverlay(){
+    this.loadingController.create({
+     message:"Please Wait",
+     duration:3000
+    }).then((overlay)=>{
+this.loading=overlay;
+this.loading.present();
+    });
+  }
+
   confirm_input(){
 
   }
   signUp(){
+    this.loadingOverlay()
     this.authService.RegisterUser(this.email, this.password)
     .then((res) => {
 
@@ -34,17 +49,19 @@ export class RegisterPage implements OnInit {
       this.afs.collection('user').doc(res.user.uid).collection('details').add({
         displayName:this.name,
         age:"",
-        profile_link:"https://wikicraze.com/wp-content/uploads/2019/08/girl-32-3.jpg",
+        profile_link:"https://img.icons8.com/cotton/2x/gender-neutral-user--v2.png",
         weight:"",
         height:"",
       }).then(res=>{
         localStorage.setItem('currentUserDoc', res.id);
 
       }).then(x=>{
+        this.loading.dismiss()
         this.router.navigate(['/age']);
       })
     }).catch((error) => {
-      this.openToast(error.message);
+      this.openToast(error);
+      console.log(error.message)
     })
 }
 async openToast(message){

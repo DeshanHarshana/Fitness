@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -20,15 +21,18 @@ export class PlaygroundPage implements OnInit {
   counter: number = 0;
   parmsId: number = 0;
   progressClass:string
-  restTime:number=600;
-  progressTime:number=1500;
-  readyTime:number=200;
+  restTime:number=10;
+  progressTime:number=15;
+  readyTime:number=10;
   heightImage=""
   constructor(private location: Location, private route: ActivatedRoute,
+    public alertController: AlertController,
+    public router:Router
 
     ) {}
 
   ngOnInit() {
+    this.presentAlert()
     this.imageStyle = 'animate__animated animate__fadeInDown image';
     this.execise_link = 'assets/playground/ready.gif';
     this.parmsId = this.route.snapshot.params.id;
@@ -169,7 +173,7 @@ export class PlaygroundPage implements OnInit {
   begin() {
     this.fadeText = 'animate__animated animate__fadeInLeft';
     this.message = 'Ready For Exercise';
-
+    this.title = 'Stop';
     this.timer = setInterval(() => {
       this.value++;
 
@@ -190,7 +194,7 @@ export class PlaygroundPage implements OnInit {
       this.execise_link = 'assets/basic1/1.gif';
       this.fadeText = 'animate__animated animate__fadeInRight';
       this.message = 'Exercise';
-
+      this.title = 'Stop';
       this.timer = setInterval(() => {
         this.value++;
 
@@ -306,6 +310,8 @@ export class PlaygroundPage implements OnInit {
     this.value = 0;
     clearInterval(this.timer);
     this.title = 'Over';
+    this.router.navigate(['success'])
+
   }
 
   //pack 2 wedigt loss plan2
@@ -313,7 +319,7 @@ export class PlaygroundPage implements OnInit {
   begin112() {
     this.fadeText = 'animate__animated animate__fadeInLeft';
     this.message = 'Ready For Execise';
-
+    this.title = 'Stop';
     this.timer = setInterval(() => {
       this.value++;
 
@@ -335,7 +341,7 @@ export class PlaygroundPage implements OnInit {
       this.execise_link = 'assets/basic2/1.gif';
       this.fadeText = 'animate__animated animate__fadeInRight';
       this.message = 'Exercise';
-
+      this.title = 'Stop';
       this.timer = setInterval(() => {
         this.value++;
 
@@ -490,6 +496,7 @@ export class PlaygroundPage implements OnInit {
     this.value = 0;
     clearInterval(this.timer);
     this.title = 'Over';
+    this.router.navigate(['success'])
   }
 // this is pack3 weight lost
 
@@ -497,7 +504,7 @@ export class PlaygroundPage implements OnInit {
 begin212() {
   this.fadeText = 'animate__animated animate__fadeInLeft';
   this.message = 'Ready For Execise';
-
+  this.title = 'Stop';
   this.timer = setInterval(() => {
     this.value++;
 
@@ -518,7 +525,7 @@ pack212() {
     this.execise_link = 'assets/basic3/1.gif';
     this.fadeText = 'animate__animated animate__fadeInRight';
     this.message = 'Exercise';
-
+    this.title = 'Stop';
     this.timer = setInterval(() => {
       this.value++;
 
@@ -712,6 +719,7 @@ end212() {
   this.value = 0;
   clearInterval(this.timer);
   this.title = 'Over';
+  this.router.navigate(['success'])
 }
 yoga1begin(){
 
@@ -966,6 +974,20 @@ yoga21(){
         }
       }, this.progressTime);
 
+    }
+    async presentAlert() {
+      const alert = await this.alertController.create({
+        cssClass: 'TextSelectable',
+        header: 'Display Control Tips',
+
+        message: 'After you start, your display may going to sleep after some time. For that you can go to your smartphone display setting and put screen sleep Never. After that you can get full experience',
+        buttons: ['OK']
+      });
+
+      await alert.present();
+
+      const { role } = await alert.onDidDismiss();
+      console.log('onDidDismiss resolved with role', role);
     }
     rest25() {
       this.imageStyle = 'animate__animated animate__fadeInDown image';

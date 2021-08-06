@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { BodyDetails } from 'src/app/model/BodyDetails';
 import { DataService } from 'src/app/services/data.service';
 import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -24,7 +25,8 @@ export class ProfilePage implements OnInit {
   constructor(
    private toastController:ToastController,
    private dataService:DataService,
-   public loadingController: LoadingController
+   public loadingController: LoadingController,
+   private router:Router
   ) { }
 
    ngOnInit () {
@@ -41,7 +43,15 @@ export class ProfilePage implements OnInit {
     )
 
   }
-
+  Logout(){
+    localStorage.removeItem('login')
+    localStorage.removeItem('uid')
+    localStorage.removeItem('currentUserDoc')
+    localStorage.removeItem('planDuration')
+    localStorage.removeItem('plan1_init_time')
+    localStorage.removeItem('timeDuration')
+    this.router.navigate(['/'])
+  }
   loadingOverlay(){
     this.loadingController.create({
       message:"Uploading"
