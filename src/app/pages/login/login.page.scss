@@ -24,15 +24,18 @@ ion-content{
     p{
 
       font-size:1rem;
-      color:#7b7b7b;
+
     }
   }
   .login-form{
+    color: #000000;
     .form-input{
+
       position: relative;
       margin-bottom: 3px;
-      .ion-item::part(native){
+      ion-item{
         padding-left: 0;
+        --background: rgb(255, 255, 255);
       }
       ion-icon{
         position:absolute;
@@ -40,6 +43,7 @@ ion-content{
         z-index: 2;
         font-size:1.2rem;
         left:5px;
+        color: #000000;
       }
       ion-label{
         position:absolute;
@@ -47,12 +51,13 @@ ion-content{
         font-weight: bolder;
         font-size:0.8rem;
         top:3px;
+        color: #000000;
       }
       ion-input{
         font-size:0.9rem;
         --padding-start:36px;
         --padding-top:36px;
-        color: #7b7b77;
+color: #000000;
 
       }
     }
@@ -67,10 +72,10 @@ ion-content{
     p{
       margin-top: 15px;
       font-size:1rem;
-      color:#7b7b7b;
+
     }
     .signup-button{
-      --border-color:#b4b4b4;
+
       -color:#000000;
       font-weight: bold;
       margin-top: 30px;

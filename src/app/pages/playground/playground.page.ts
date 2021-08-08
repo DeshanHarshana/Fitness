@@ -21,9 +21,9 @@ export class PlaygroundPage implements OnInit {
   counter: number = 0;
   parmsId: number = 0;
   progressClass:string
-  restTime:number=10;
-  progressTime:number=15;
-  readyTime:number=10;
+  restTime:number=600;
+  progressTime:number=1500;
+  readyTime:number=200;
   heightImage=""
   constructor(private location: Location, private route: ActivatedRoute,
     public alertController: AlertController,

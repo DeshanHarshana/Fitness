@@ -3,8 +3,11 @@ ion-tab-bar{
   position:absolute;
   bottom: 0;
   width: 90%;
-  --background:rgba(0,0,0,0.468);
+  --background:rgba(75, 74, 74, 0.468);
   align-self:center;
   border-radius: 20px;
   margin-bottom: 10px;
+}
+ion-label{
+  color: white;
 }
